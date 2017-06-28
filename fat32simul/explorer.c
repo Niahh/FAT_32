@@ -148,5 +148,11 @@ void create_elem(explorer* ex, char* file_name, int type){
 }
 
 void print_element_infos(element* element){
-    printf("%s     size : %d     type : %d\n",element->name, element->size, element->type);
+    if (element->type!=0){
+        printf("dir : ");
+    } else {
+        printf("file : ");
+    }
+        printf("%s     size : %d     type : %d\n",element->name, element->size, element->type);
+        
 }

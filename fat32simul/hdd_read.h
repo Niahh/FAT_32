@@ -20,12 +20,7 @@ extern "C" {
 #endif
     unsigned char* hdd;
     typedef unsigned char* sector;
-    unsigned char*  read_name(sector sec, int offset, int size);
-    int read_integer(sector sec, int offset, int size);
-    sector read_sector(int sec);
     void write_sector(int sec, sector to_write);
-    void write_integer(sector sec, int integer, int offset, int size);
-    void write_name(sector sec, char* name, int offset, int size);
     void delete_sector(sector sec);
 #ifdef __cplusplus
 }
