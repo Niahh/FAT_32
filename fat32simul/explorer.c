@@ -41,9 +41,15 @@ void file_dialog(explorer* ex){
     dir_dialog(ex);
 }
 void select_element(explorer* ex){
-    printf("type the number of the element you want to select(0 for the first element)\n");
-    int to_rd = 0;
-    scanf("%d",&to_rd);
+    int to_rd = -1;
+    while (to_rd ==-1){
+        printf("type the number of the element you want to select(0 for the first element)\n");
+        scanf("%d",&to_rd);
+        if (to_rd>=ex->sub_dirs->size || to_rd<0){
+            printf("error file does not exists\n");
+            to_rd=-1;
+        }
+    }
     element* elem = (element*)(list_at(ex->sub_dirs,to_rd));
     if (elem->type==0){
         printf("\n\n\n\n\n\nfile : %s\n\n",(elem)->name);

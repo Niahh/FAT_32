@@ -105,7 +105,7 @@ void add_file(fat32* fat, unsigned char* sec, int offset, char* name) {
     write_integer(sec,0,offset+0x0B,1);
     write_integer(sec, file_cluster % 65536, offset+0x1A, 2);
     sector file_content = read_sector(file_cluster);
-    write_name(file_content,"this is the content of a file",0,14);
+    write_name(file_content,"this is the content of a file",0,29);
     write_sector(file_cluster,file_content);
 }
 
