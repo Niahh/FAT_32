@@ -17,7 +17,7 @@
  * 
  */
 int main(int argc, char** argv) {
-    fat32_format(65536*512,10,30);
+    fat32_format(65536*512,1,300);
     printf("\n=======================================\nstart reading here\n\n");
     start();
     return (EXIT_SUCCESS);
